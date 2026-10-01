@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carom Billiards 3D: Arena - Official Website</title>
+    <style>
+        :root {
+            --bg-color: #0a0e14;
+            --card-bg: #141c26;
+            --accent: #2ecc71;
+            --accent-hover: #27ae60;
+            --accent-glow: rgba(46, 204, 113, 0.25);
+            --gold: #f1c40f;
+            --text-primary: #ffffff;
+            --text-secondary: #94a3b8;
+            --border: #243142;
+            --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-family);
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .hero {
+            position: relative;
+            padding: 80px 20px 60px;
+            text-align: center;
+            background: radial-gradient(circle at 50% 20%, #1e3a2f 0%, var(--bg-color) 70%);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .badge {
+            display: inline-block;
+            background: var(--accent-glow);
+            color: var(--accent);
+            font-size: 14px;
+            font-weight: 700;
+            padding: 6px 18px;
+            border-radius: 30px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border: 1px solid rgba(46, 204, 113, 0.4);
+        }
+
+        h1 {
+            font-size: 48px;
+            font-weight: 800;
+            letter-spacing: -1px;
+            margin-bottom: 16px;
+            background: linear-gradient(135deg, #ffffff 40%, var(--gold) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .tagline {
+            font-size: 20px;
+            color: var(--text-secondary);
+            max-width: 680px;
+            margin: 0 auto 30px;
+        }
+
+        .btn-group {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            flex-wrap: wrap;
+            margin-bottom: 40px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--accent);
+            color: #0a0e14;
+            font-weight: 700;
+            font-size: 16px;
+            padding: 14px 28px;
+            border-radius: 12px;
+            text-decoration: none;
+            transition: transform 0.2s, background 0.2s, box-shadow 0.2s;
+            box-shadow: 0 4px 20px var(--accent-glow);
+        }
+
+        .btn:hover {
+            background: var(--accent-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 24px rgba(46, 204, 113, 0.4);
+        }
+
+        .btn-secondary {
+            background: #1e293b;
+            color: #ffffff;
+            box-shadow: none;
+            border: 1px solid var(--border);
+        }
+
+        .btn-secondary:hover {
+            background: #334155;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+            margin-top: 30px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 28px;
+            transition: transform 0.2s, border-color 0.2s;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            border-color: var(--accent);
+        }
+
+        .card-icon {
+            font-size: 36px;
+            margin-bottom: 16px;
+        }
+
+        .card-title {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: #ffffff;
+        }
+
+        .card-desc {
+            color: var(--text-secondary);
+            font-size: 15px;
+            line-height: 1.6;
+        }
+
+        footer {
+            border-top: 1px solid var(--border);
+            background: #070a0e;
+            padding: 40px 20px;
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 14px;
+        }
+
+        footer a {
+            color: var(--accent);
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 34px;
+            }
+            .tagline {
+                font-size: 17px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="hero">
+        <span class="badge">iOS & iPadOS 3D Sports Simulation</span>
+        <h1>Carom Billiards 3D: Arena</h1>
+        <p class="tagline">The most authentic carom billiards experience on mobile. Master 3-Cushion, 1-Cushion, and Libre with realistic cloth friction, sidespin, and slow-motion 3D trajectory replays.</p>
+        <div class="btn-group">
+            <a href="support.html" class="btn">💬 Player Support</a>
+            <a href="privacy-policy.html" class="btn btn-secondary">🔒 Privacy Policy</a>
+            <a href="terms.html" class="btn btn-secondary">📄 Terms of Service</a>
+        </div>
+    </header>
+
+    <main class="container">
+        <h2 style="text-align: center; font-size: 30px; font-weight: 800; margin-bottom: 10px;">Championship Features</h2>
+        <p style="text-align: center; color: var(--text-secondary); max-width: 600px; margin: 0 auto;">Designed for competitive carom enthusiasts and beginners alike.</p>
+
+        <div class="grid">
+            <div class="card">
+                <div class="card-icon">🎱</div>
+                <div class="card-title">3 Classic Carom Modes</div>
+                <div class="card-desc">Play 3-Cushion (Ba Băng), 1-Cushion (Một Băng), and Straight Rail / Libre with authentic international carom rules and scoring.</div>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">🌀</div>
+                <div class="card-title">Authentic 3D Physics</div>
+                <div class="card-desc">Simulates Simonis cloth friction, natural cushion rebounds, English sidespin, follow (cule), and draw (trô) trajectories at 60 FPS.</div>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">🤖</div>
+                <div class="card-title">Master AI Opponents</div>
+                <div class="card-desc">Practice against 3 difficulty tiers: Casual, Realistic Pro, and Master with deep micro-optimized bank angle calculations.</div>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">🌐</div>
+                <div class="card-title">Multiplayer Anywhere</div>
+                <div class="card-desc">Compete worldwide via Apple Game Center matchmaking, or play head-to-head with nearby friends over offline Bluetooth.</div>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">🔄</div>
+                <div class="card-title">3D Trajectory & Replays</div>
+                <div class="card-desc">Analyze every cushion contact with color-coded 3D ribbons and rewind breathtaking shots in 0.75x slow motion.</div>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">🔒</div>
+                <div class="card-title">100% Private & Ad-Free</div>
+                <div class="card-desc">Zero tracking, no ads, and no personal data collection. Your stats stay safely on your local device.</div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>
+            <a href="privacy-policy.html">Privacy Policy</a> | 
+            <a href="support.html">Support</a> | 
+            <a href="terms.html">Terms of Service</a>
+        </p>
+        <p style="margin-top: 14px;">&copy; 2026 Carom Billiards 3D: Arena. Created by NGOC THANG TRUONG. All rights reserved.</p>
+    </footer>
+</body>
+</html>

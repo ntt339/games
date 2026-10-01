@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Support - Carom Billiards 3D: Arena</title>
+    <style>
+        :root {
+            --bg-color: #0d131a;
+            --card-bg: #16202c;
+            --accent: #2ecc71;
+            --accent-glow: rgba(46, 204, 113, 0.25);
+            --text-primary: #e6edf3;
+            --text-secondary: #8b949e;
+            --border: #30363d;
+            --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-family);
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            line-height: 1.7;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 860px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 48px;
+            box-shadow: 0 12px 36px rgba(0, 0, 0, 0.4);
+        }
+
+        .header {
+            text-align: center;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 30px;
+            margin-bottom: 35px;
+        }
+
+        .badge {
+            display: inline-block;
+            background: var(--accent-glow);
+            color: var(--accent);
+            font-size: 13px;
+            font-weight: 600;
+            padding: 4px 14px;
+            border-radius: 20px;
+            margin-bottom: 16px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        h1 {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: #ffffff;
+        }
+
+        .meta {
+            color: var(--text-secondary);
+            font-size: 14px;
+        }
+
+        h2 {
+            font-size: 20px;
+            font-weight: 600;
+            color: #ffffff;
+            margin-top: 32px;
+            margin-bottom: 14px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        h2::before {
+            content: "";
+            display: inline-block;
+            width: 4px;
+            height: 20px;
+            background: var(--accent);
+            border-radius: 2px;
+        }
+
+        p {
+            margin-bottom: 16px;
+            color: #c9d1d9;
+        }
+
+        ul {
+            margin: 12px 0 20px 24px;
+            color: #c9d1d9;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        .faq-item {
+            background: #111a24;
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 16px;
+        }
+
+        .faq-question {
+            font-size: 17px;
+            font-weight: 600;
+            color: #ffffff;
+            margin-bottom: 8px;
+        }
+
+        .faq-answer {
+            color: #8b949e;
+            font-size: 15px;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        .contact-card {
+            background: linear-gradient(135deg, rgba(46, 204, 113, 0.1), rgba(26, 115, 232, 0.08));
+            border: 1px solid var(--accent);
+            border-radius: 12px;
+            padding: 24px;
+            text-align: center;
+            margin: 30px 0;
+        }
+
+        .contact-btn {
+            display: inline-block;
+            background: var(--accent);
+            color: #0d131a;
+            font-weight: 700;
+            padding: 12px 28px;
+            border-radius: 8px;
+            text-decoration: none;
+            margin-top: 14px;
+            transition: transform 0.2s, background 0.2s;
+        }
+
+        .contact-btn:hover {
+            background: #27ae60;
+            transform: translateY(-2px);
+        }
+
+        .footer {
+            border-top: 1px solid var(--border);
+            margin-top: 40px;
+            padding-top: 24px;
+            text-align: center;
+            font-size: 14px;
+            color: var(--text-secondary);
+        }
+
+        a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 20px 12px;
+            }
+            .container {
+                padding: 24px 18px;
+            }
+            h1 {
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <span class="badge">Help Center</span>
+            <h1>App Support</h1>
+            <div class="meta">
+                <strong>Carom Billiards 3D: Arena</strong> • Dedicated Player Assistance
+            </div>
+        </div>
+
+        <p>Welcome to the official support page for <strong>Carom Billiards 3D: Arena</strong>. We are committed to providing the most authentic, smooth, and enjoyable cue-sports experience on iOS and iPadOS.</p>
+
+        <div class="contact-card">
+            <h3 style="color: #ffffff; margin-bottom: 6px; font-size: 20px;">Need Help or Found an Issue?</h3>
+            <p style="color: #c9d1d9; margin-bottom: 12px;">Our team is available to assist with gameplay questions, technical feedback, or feature suggestions.</p>
+            <a href="mailto:thangtn.dev@gmail.com?subject=Carom%20Billiards%20Support" class="contact-btn">✉️ Email Support: thangtn.dev@gmail.com</a>
+        </div>
+
+        <h2>Frequently Asked Questions (FAQ)</h2>
+
+        <div class="faq-item">
+            <div class="faq-question">🎱 What carom game modes are available?</div>
+            <p class="faq-answer">The game supports all 3 traditional international carom disciplines: <strong>3-Cushion</strong> (Ba Băng), <strong>1-Cushion</strong> (Một Băng), and <strong>Straight Rail / Libre</strong> (Bida Phăng Tự Do), plus dedicated Training Drills and Practice Modes.</p>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">🌐 How does Multiplayer work?</div>
+            <p class="faq-answer">You can play multiplayer in 3 distinct ways:
+                <br>1. <strong>Apple Game Center</strong>: Auto-match with players worldwide or invite Game Center friends.
+                <br>2. <strong>Bluetooth / Local Network</strong>: Play head-to-head with nearby friends without needing an internet connection.
+                <br>3. <strong>Pass & Play</strong>: Compete on a single iPhone or iPad device with alternating turns.
+            </p>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">🎯 How do I control spin and power?</div>
+            <p class="faq-answer">Use the circular Spin/English touch pad on the screen to position your cue tip (adjusting topspin, draw, or sidespin). Use the vertical Power Slider or pull back on the cue stick to select stroke intensity.</p>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">🔄 How do I review or slow down shots?</div>
+            <p class="faq-answer">After any stroke, tap the Replay icon to view exact 3D trajectory ribbons showing ball paths and cushion bounces. You can adjust playback speed between 0.75x slow-mo, 1.0x normal, and 1.5x fast-forward.</p>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">🔒 Is my data safe?</div>
+            <p class="faq-answer">Yes, 100%. We do not collect or track any personal information or analytics. Read our full <a href="privacy-policy.html">Privacy Policy</a> for complete details.</p>
+        </div>
+
+        <div class="footer">
+            <p><a href="privacy-policy.html">Privacy Policy</a> • <a href="terms.html">Terms of Service</a></p>
+            <p style="margin-top: 8px;">&copy; 2026 Carom Billiards 3D: Arena. Created by NGOC THANG TRUONG.</p>
+        </div>
+    </div>
+</body>
+</html>

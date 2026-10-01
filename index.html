@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NGOC THANG TRUONG - Mobile Games Studio</title>
+    <style>
+        :root {
+            --bg-color: #0a0e14;
+            --card-bg: #141c26;
+            --accent: #2ecc71;
+            --accent-hover: #27ae60;
+            --accent-glow: rgba(46, 204, 113, 0.25);
+            --gold: #f1c40f;
+            --text-primary: #ffffff;
+            --text-secondary: #94a3b8;
+            --border: #243142;
+            --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-family);
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .hero {
+            position: relative;
+            padding: 70px 20px 50px;
+            text-align: center;
+            background: radial-gradient(circle at 50% 20%, #172a3a 0%, var(--bg-color) 75%);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .badge {
+            display: inline-block;
+            background: var(--accent-glow);
+            color: var(--accent);
+            font-size: 13px;
+            font-weight: 700;
+            padding: 6px 16px;
+            border-radius: 30px;
+            margin-bottom: 18px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border: 1px solid rgba(46, 204, 113, 0.35);
+        }
+
+        h1 {
+            font-size: 42px;
+            font-weight: 800;
+            letter-spacing: -1px;
+            margin-bottom: 12px;
+            background: linear-gradient(135deg, #ffffff 40%, var(--gold) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .tagline {
+            font-size: 18px;
+            color: var(--text-secondary);
+            max-width: 650px;
+            margin: 0 auto;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 50px 20px;
+            flex: 1;
+        }
+
+        .section-title {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 24px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .section-title::before {
+            content: "";
+            display: inline-block;
+            width: 4px;
+            height: 24px;
+            background: var(--accent);
+            border-radius: 2px;
+        }
+
+        .game-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 24px;
+            margin-bottom: 50px;
+        }
+
+        .game-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
+        }
+
+        .game-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--accent);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+        }
+
+        .game-header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 16px;
+        }
+
+        .game-icon {
+            font-size: 40px;
+            width: 64px;
+            height: 64px;
+            background: rgba(46, 204, 113, 0.12);
+            border: 1px solid rgba(46, 204, 113, 0.25);
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .game-title {
+            font-size: 20px;
+            font-weight: 700;
+            color: #ffffff;
+        }
+
+        .game-genre {
+            font-size: 13px;
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        .game-desc {
+            color: var(--text-secondary);
+            font-size: 14px;
+            line-height: 1.6;
+            margin-bottom: 24px;
+            flex: 1;
+        }
+
+        .game-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            border-top: 1px solid var(--border);
+            padding-top: 18px;
+        }
+
+        .btn {
+            display: inline-block;
+            font-size: 13px;
+            font-weight: 600;
+            padding: 8px 16px;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+
+        .btn-primary {
+            background: var(--accent);
+            color: #0a0e14;
+        }
+
+        .btn-primary:hover {
+            background: var(--accent-hover);
+        }
+
+        .btn-outline {
+            background: rgba(255, 255, 255, 0.05);
+            color: #e2e8f0;
+            border: 1px solid var(--border);
+        }
+
+        .btn-outline:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: #64748b;
+        }
+
+        .coming-soon {
+            opacity: 0.6;
+            border-style: dashed;
+        }
+
+        .coming-soon:hover {
+            transform: none;
+            border-color: var(--border);
+            box-shadow: none;
+        }
+
+        footer {
+            border-top: 1px solid var(--border);
+            background: #070a0e;
+            padding: 30px 20px;
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 14px;
+        }
+
+        footer a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <header class="hero">
+        <span class="badge">Independent Mobile Game Studio</span>
+        <h1>NGOC THANG TRUONG</h1>
+        <p class="tagline">Crafting high-fidelity, physics-based 3D sports and casual simulation games for iOS and iPadOS.</p>
+    </header>
+
+    <main class="container">
+        <h2 class="section-title">Published Titles</h2>
+        <div class="game-grid">
+            <!-- Game 1: Carom Billiards 3D: Arena -->
+            <div class="game-card">
+                <div>
+                    <div class="game-header">
+                        <div class="game-icon">🎱</div>
+                        <div>
+                            <div class="game-title">Carom Billiards 3D: Arena</div>
+                            <div class="game-genre">Sports Simulation • 3D Billiards</div>
+                        </div>
+                    </div>
+                    <p class="game-desc">
+                        Realistic 3D carom billiards physics. Features 3-Cushion, 1-Cushion, and Straight Rail / Libre with Master AI, Apple Game Center online matchmaking, and slow-motion 3D trajectory replays.
+                    </p>
+                </div>
+                <div class="game-links">
+                    <a href="carom/index.html" class="btn btn-primary">Overview</a>
+                    <a href="carom/privacy-policy.html" class="btn btn-outline">Privacy Policy</a>
+                    <a href="carom/support.html" class="btn btn-outline">Support</a>
+                    <a href="carom/terms.html" class="btn btn-outline">Terms</a>
+                </div>
+            </div>
+
+            <!-- Future Game Slot -->
+            <div class="game-card coming-soon">
+                <div>
+                    <div class="game-header">
+                        <div class="game-icon" style="background: rgba(255, 255, 255, 0.05); border-color: var(--border);">🚀</div>
+                        <div>
+                            <div class="game-title">More Games Coming Soon</div>
+                            <div class="game-genre">In Active Development</div>
+                        </div>
+                    </div>
+                    <p class="game-desc">
+                        New mobile gaming titles are currently in production. Stay tuned for future releases across sports, board games, and strategy simulations.
+                    </p>
+                </div>
+                <div class="game-links">
+                    <span class="btn btn-outline" style="cursor: default;">Coming Soon</span>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 NGOC THANG TRUONG. All rights reserved.</p>
+        <p style="margin-top: 6px; font-size: 13px;">Contact: <a href="mailto:thangtn.dev@gmail.com">thangtn.dev@gmail.com</a></p>
+    </footer>
+</body>
+</html>
