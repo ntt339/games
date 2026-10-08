@@ -10,7 +10,7 @@ Official support, terms of service, and privacy policy pages for mobile games pu
 
 ```text
 ├── index.html                 # Studio Portal / Hub listing all published games
-├── carom/                     # Carom Billiards 3D: Arena
+├── carom/                     # Carom GO
 │   ├── index.html             # Game showcase & features
 │   ├── privacy-policy.html    # App Privacy Policy (App Store Review Compliant)
 │   ├── support.html           # Customer Support & FAQ
