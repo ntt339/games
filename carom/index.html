@@ -3,21 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Carom GO: 3-Cushion & Libre - Authentic World Legends Tour</title>
-    <meta name="description" content="Carom GO: 3-Cushion & Libre is the definitive carom cue sports game on iOS. Featuring 10 World Legend Champions, Adaptive AI (50%-85%-100%), 8-player Bluetooth multiplayer, Game Center tournaments, and broadcast-quality 1080p replay export.">
-    <meta name="keywords" content="carom go, carom, billiards, 3 cushion, bida 3 bang, three cushion, cue sports, libre, world legends tour, pba carom, adaptive ai, game center, bluetooth multiplayer">
-    <link rel="icon" type="image/png" href="../../Carom Billiards/Assets.xcassets/AppIcon.appiconset/AppIcon-1024.png">
+    <title>Carom GO: 3-Cushion Billiards - Authentic Pocketless Cue Sports</title>
+    <meta name="description" content="Carom GO is the premier 3-cushion, 1-cushion, and libre carom billiards game for iOS and iPadOS. Featuring true-to-life 3D physics, Free Ball Setup, 10 World Legend Champions, 4-8 player knockout tournaments, offline Bluetooth/Wi-Fi play, and Game Center matchmaking.">
+    <meta name="keywords" content="carom go, carom, billiards, 3 cushion, three cushion, carambola, dreiband, cue sports, libre, world legends tour, tournament bracket, bluetooth multiplayer, game center, free ball setup, offline carom">
+    <meta name="author" content="NGOC THANG TRUONG">
+
+    <!-- OpenGraph / Social Sharing -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Carom GO: 3-Cushion Billiards - Authentic Pocketless Cue Sports">
+    <meta property="og:description" content="Master realistic 3D cushion physics, execute precision english, test custom leaves with Free Ball Setup, and host 4-8 player knockout tournaments with friends.">
+    <meta property="og:image" content="assets/01_3D_Physics_Gameplay.png">
+    <meta property="og:url" content="https://thangtn03.github.io/games/carom/">
+
+    <!-- Apple Mobile Tags -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Carom GO">
+    <link rel="icon" type="image/png" href="assets/icon.png">
+    <link rel="apple-touch-icon" href="assets/icon.png">
+
     <style>
         :root {
-            --bg-color: #07090e;
-            --surface-bg: #0f141d;
-            --card-bg: #151c28;
-            --card-border: #232f42;
-            --card-hover: #1e283a;
+            --bg-color: #06090e;
+            --surface-bg: #0c121b;
+            --card-bg: #121a26;
+            --card-border: #1e2c3f;
+            --card-hover: #182436;
             --emerald: #10b981;
+            --emerald-hover: #059669;
             --emerald-glow: rgba(16, 185, 129, 0.28);
             --gold: #f59e0b;
-            --gold-glow: rgba(245, 158, 11, 0.28);
+            --gold-glow: rgba(245, 158, 11, 0.25);
             --cyan: #06b6d4;
             --cyan-glow: rgba(6, 182, 212, 0.25);
             --text-primary: #f8fafc;
@@ -41,7 +57,7 @@
             -webkit-font-smoothing: antialiased;
         }
 
-        /* Ambient Glows */
+        /* Ambient Glow Effect */
         .ambient-glow {
             position: absolute;
             top: 0;
@@ -49,16 +65,94 @@
             transform: translateX(-50%);
             width: 100%;
             max-width: 1200px;
-            height: 550px;
-            background: radial-gradient(circle at 50% 10%, rgba(16, 185, 129, 0.16) 0%, rgba(6, 182, 212, 0.08) 35%, transparent 70%);
+            height: 600px;
+            background: radial-gradient(circle at 50% 12%, rgba(16, 185, 129, 0.18) 0%, rgba(6, 182, 212, 0.08) 40%, transparent 75%);
             pointer-events: none;
             z-index: 0;
         }
 
-        /* Header / Hero */
+        /* Navigation Bar */
+        .nav-bar {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            background: rgba(6, 9, 14, 0.85);
+            border-bottom: 1px solid var(--card-border);
+            padding: 14px 24px;
+        }
+
+        .nav-container {
+            max-width: 1140px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .nav-brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            color: var(--text-primary);
+            font-weight: 800;
+            font-size: 18px;
+            letter-spacing: -0.3px;
+        }
+
+        .nav-brand img {
+            width: 36px;
+            height: 36px;
+            border-radius: 9px;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            object-fit: cover;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 22px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+            transition: color 0.2s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--emerald);
+        }
+
+        .nav-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            color: #ffffff;
+            font-size: 13px;
+            font-weight: 700;
+            padding: 8px 18px;
+            border-radius: 10px;
+            text-decoration: none;
+            box-shadow: 0 2px 14px var(--emerald-glow);
+            transition: all 0.2s ease;
+        }
+
+        .nav-cta:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 20px rgba(16, 185, 129, 0.45);
+        }
+
+        /* Hero Section */
         .hero {
             position: relative;
-            padding: 85px 24px 60px;
+            padding: 75px 24px 50px;
             text-align: center;
             z-index: 1;
             border-bottom: 1px solid var(--card-border);
@@ -70,12 +164,12 @@
             gap: 8px;
             background: var(--emerald-glow);
             color: var(--emerald);
-            font-size: 13px;
-            font-weight: 700;
+            font-size: 12px;
+            font-weight: 800;
             padding: 6px 18px;
             border-radius: 999px;
-            margin-bottom: 24px;
-            letter-spacing: 0.6px;
+            margin-bottom: 22px;
+            letter-spacing: 0.8px;
             text-transform: uppercase;
             border: 1px solid rgba(16, 185, 129, 0.4);
         }
@@ -89,22 +183,23 @@
         }
 
         h1 {
-            font-size: 54px;
+            font-size: 52px;
             font-weight: 900;
             letter-spacing: -1.5px;
             line-height: 1.12;
-            margin-bottom: 18px;
-            background: linear-gradient(135deg, #ffffff 40%, #e2e8f0 70%, var(--gold) 100%);
+            margin-bottom: 16px;
+            background: linear-gradient(135deg, #ffffff 35%, #e2e8f0 70%, var(--gold) 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
         .subtitle {
-            font-size: 21px;
+            font-size: 20px;
             color: var(--text-secondary);
-            max-width: 740px;
-            margin: 0 auto 34px;
+            max-width: 760px;
+            margin: 0 auto 32px;
             font-weight: 400;
+            line-height: 1.6;
         }
 
         .spec-pills {
@@ -112,7 +207,10 @@
             justify-content: center;
             gap: 12px;
             flex-wrap: wrap;
-            margin-bottom: 38px;
+            margin-bottom: 36px;
+            max-width: 980px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .pill {
@@ -137,7 +235,7 @@
             justify-content: center;
             gap: 16px;
             flex-wrap: wrap;
-            margin-bottom: 20px;
+            margin-bottom: 24px;
         }
 
         .btn {
@@ -146,7 +244,7 @@
             gap: 10px;
             font-weight: 700;
             font-size: 15px;
-            padding: 14px 30px;
+            padding: 14px 28px;
             border-radius: 14px;
             text-decoration: none;
             transition: all 0.2s ease;
@@ -161,7 +259,7 @@
 
         .btn-primary:hover {
             transform: translateY(-2px);
-            box-shadow: 0 8px 30px rgba(16, 185, 129, 0.45);
+            box-shadow: 0 8px 32px rgba(16, 185, 129, 0.45);
         }
 
         .btn-secondary {
@@ -180,12 +278,12 @@
         .container {
             max-width: 1140px;
             margin: 0 auto;
-            padding: 70px 24px;
+            padding: 60px 24px;
         }
 
         .section-header {
             text-align: center;
-            margin-bottom: 50px;
+            margin-bottom: 48px;
         }
 
         .section-badge {
@@ -199,7 +297,7 @@
         }
 
         .section-title {
-            font-size: 36px;
+            font-size: 34px;
             font-weight: 800;
             letter-spacing: -0.8px;
             color: #ffffff;
@@ -209,8 +307,163 @@
         .section-desc {
             color: var(--text-secondary);
             font-size: 17px;
-            max-width: 680px;
+            max-width: 700px;
             margin: 0 auto;
+        }
+
+        /* Showcase Gallery */
+        .gallery-wrap {
+            margin-bottom: 75px;
+        }
+
+        .gallery-scroll {
+            display: flex;
+            gap: 20px;
+            overflow-x: auto;
+            padding-bottom: 24px;
+            scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .gallery-scroll::-webkit-scrollbar {
+            height: 8px;
+        }
+
+        .gallery-scroll::-webkit-scrollbar-track {
+            background: var(--surface-bg);
+            border-radius: 4px;
+        }
+
+        .gallery-scroll::-webkit-scrollbar-thumb {
+            background: var(--card-border);
+            border-radius: 4px;
+        }
+
+        .gallery-scroll::-webkit-scrollbar-thumb:hover {
+            background: var(--emerald);
+        }
+
+        .gallery-item {
+            flex: 0 0 280px;
+            scroll-snap-align: start;
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 20px;
+            overflow: hidden;
+            transition: all 0.25s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-6px);
+            border-color: var(--emerald);
+            box-shadow: 0 16px 36px rgba(0, 0, 0, 0.5);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+            background: #000;
+            aspect-ratio: 1179 / 2556;
+            object-fit: cover;
+        }
+
+        .gallery-caption {
+            padding: 16px;
+            background: var(--card-bg);
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .gallery-caption h4 {
+            font-size: 15px;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 4px;
+        }
+
+        .gallery-caption p {
+            font-size: 13px;
+            color: var(--text-secondary);
+            line-height: 1.4;
+        }
+
+        /* Highlight Banner */
+        .highlight-banner {
+            background: linear-gradient(135deg, #0e1724 0%, #132235 100%);
+            border: 1px solid rgba(6, 182, 212, 0.35);
+            border-radius: 24px;
+            padding: 44px;
+            display: grid;
+            grid-template-columns: 1.25fr 0.75fr;
+            gap: 36px;
+            align-items: center;
+            margin-bottom: 75px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+        }
+
+        .highlight-content h3 {
+            font-size: 28px;
+            font-weight: 800;
+            color: #ffffff;
+            margin-bottom: 14px;
+            line-height: 1.25;
+        }
+
+        .highlight-content p {
+            color: var(--text-secondary);
+            font-size: 16px;
+            line-height: 1.65;
+            margin-bottom: 22px;
+        }
+
+        .feature-bullets {
+            list-style: none;
+        }
+
+        .feature-bullets li {
+            position: relative;
+            padding-left: 26px;
+            margin-bottom: 10px;
+            color: #e2e8f0;
+            font-size: 14.5px;
+            line-height: 1.5;
+        }
+
+        .feature-bullets li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--emerald);
+            font-weight: 900;
+        }
+
+        .highlight-badge-card {
+            background: rgba(0, 0, 0, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 20px;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .highlight-badge-card .stat-val {
+            font-size: 44px;
+            font-weight: 900;
+            color: var(--gold);
+            line-height: 1;
+            margin-bottom: 6px;
+        }
+
+        .highlight-badge-card .stat-label {
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
         }
 
         /* Feature Cards Grid */
@@ -218,7 +471,7 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 24px;
-            margin-bottom: 60px;
+            margin-bottom: 70px;
         }
 
         .card {
@@ -251,13 +504,13 @@
         }
 
         .card-icon {
-            font-size: 40px;
-            margin-bottom: 18px;
+            font-size: 38px;
+            margin-bottom: 16px;
             display: inline-block;
         }
 
         .card-title {
-            font-size: 22px;
+            font-size: 21px;
             font-weight: 700;
             color: #ffffff;
             margin-bottom: 12px;
@@ -265,81 +518,9 @@
         }
 
         .card-desc {
-            font-size: 15px;
-            color: var(--text-secondary);
-            line-height: 1.65;
-        }
-
-        /* Highlight Banner */
-        .highlight-banner {
-            background: linear-gradient(135deg, #111a26 0%, #152233 100%);
-            border: 1px solid rgba(6, 182, 212, 0.35);
-            border-radius: 24px;
-            padding: 44px;
-            display: grid;
-            grid-template-columns: 1.2fr 0.8fr;
-            gap: 36px;
-            align-items: center;
-            margin-bottom: 70px;
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
-        }
-
-        .highlight-content h3 {
-            font-size: 28px;
-            font-weight: 800;
-            color: #ffffff;
-            margin-bottom: 14px;
-        }
-
-        .highlight-content p {
-            color: var(--text-secondary);
-            font-size: 16px;
-            line-height: 1.65;
-            margin-bottom: 22px;
-        }
-
-        .feature-bullets {
-            list-style: none;
-        }
-
-        .feature-bullets li {
-            position: relative;
-            padding-left: 26px;
-            margin-bottom: 10px;
-            color: #e2e8f0;
             font-size: 14.5px;
-        }
-
-        .feature-bullets li::before {
-            content: "✓";
-            position: absolute;
-            left: 0;
-            color: var(--emerald);
-            font-weight: 900;
-        }
-
-        .highlight-badge-card {
-            background: rgba(0, 0, 0, 0.35);
-            border: 1px solid rgba(255, 255, 255, 0.12);
-            border-radius: 18px;
-            padding: 26px;
-            text-align: center;
-        }
-
-        .highlight-badge-card .stat-val {
-            font-size: 44px;
-            font-weight: 900;
-            color: var(--gold);
-            line-height: 1;
-            margin-bottom: 6px;
-        }
-
-        .highlight-badge-card .stat-label {
-            font-size: 13px;
-            font-weight: 700;
             color: var(--text-secondary);
-            text-transform: uppercase;
-            letter-spacing: 0.8px;
+            line-height: 1.65;
         }
 
         /* App Store Specs Table */
@@ -347,7 +528,7 @@
             background: var(--surface-bg);
             border: 1px solid var(--card-border);
             border-radius: 20px;
-            padding: 36px;
+            padding: 40px;
             margin-bottom: 60px;
         }
 
@@ -375,7 +556,7 @@
         /* Footer */
         footer {
             border-top: 1px solid var(--card-border);
-            background: #05070a;
+            background: #040609;
             padding: 50px 24px;
             text-align: center;
             color: var(--text-muted);
@@ -404,6 +585,9 @@
 
         /* Responsive */
         @media (max-width: 900px) {
+            .nav-links {
+                display: none;
+            }
             .highlight-banner {
                 grid-template-columns: 1fr;
             }
@@ -413,31 +597,54 @@
             .subtitle {
                 font-size: 18px;
             }
+            .gallery-item {
+                flex: 0 0 240px;
+            }
         }
     </style>
 </head>
 <body>
     <div class="ambient-glow"></div>
 
+    <!-- Navigation Bar -->
+    <nav class="nav-bar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-brand">
+                <img src="assets/icon.png" alt="Carom GO Icon">
+                <span>Carom GO</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#showcase">Screenshots</a></li>
+                <li><a href="#disciplines">Disciplines</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#specifications">Specs</a></li>
+                <li><a href="support.html">Support</a></li>
+                <li><a href="privacy-policy.html">Privacy</a></li>
+            </ul>
+            <a href="https://apps.apple.com/app/id6738927894" class="nav-cta"> App Store</a>
+        </div>
+    </nav>
+
     <!-- Hero Section -->
     <header class="hero">
         <div class="hero-badge">
-            <span></span> Official App Store Release • Fun Party Tournaments
+            <span></span> Official App Store Release • Authentic 3D Carom
         </div>
         <h1>Carom GO</h1>
-        <p class="subtitle">Play carom billiards with friends anytime, anywhere! Host exciting 4 to 8-player tournaments, play offline nearby over Wi-Fi and Bluetooth with no internet needed, and enjoy classic 3-Cushion, 1-Cushion, and Libre games with simple controls and realistic 3D views.</p>
+        <p class="subtitle">Experience authentic 3-Cushion, 1-Cushion, and Libre carom billiards with realistic 3D physics, Free Ball Setup, 10 World Legend Champions, and fast knockout tournaments with friends—online or offline without internet.</p>
         
         <div class="spec-pills">
             <div class="pill">🏆 <b>4 - 8 Players</b> Knockout Tournaments</div>
-            <div class="pill">📶 <b>No Internet Needed</b> Local Wi-Fi & Bluetooth</div>
+            <div class="pill">📶 <b>Offline P2P</b> Local Wi-Fi & Bluetooth</div>
             <div class="pill">🌐 <b>Game Center</b> Quick Online 1v1 Matches</div>
-            <div class="pill">📱 <b>Pass & Play</b> Single Device Sharing</div>
-            <div class="pill">🎱 <b>3 Game Modes</b> 3-Cushion, 1-Cushion & Libre</div>
-            <div class="pill">🔒 <b>100% Ad-Free</b> Zero Tracking</div>
+            <div class="pill">🎯 <b>Free Ball Setup</b> Interactive Shot Lab</div>
+            <div class="pill">🎱 <b>3 Disciplines</b> 3-Cushion, 1-Cushion & Libre</div>
+            <div class="pill">🌍 <b>9 Languages</b> Auto Device Localization</div>
+            <div class="pill">🔒 <b>100% Ad-Free</b> Zero Data Tracking</div>
         </div>
 
         <div class="btn-group">
-            <a href="https://apps.apple.com" class="btn btn-primary"> Download on App Store</a>
+            <a href="https://apps.apple.com/app/id6738927894" class="btn btn-primary"> Download on the App Store</a>
             <a href="support.html" class="btn btn-secondary">💬 Player Support</a>
             <a href="privacy-policy.html" class="btn btn-secondary">🔒 Privacy Policy</a>
         </div>
@@ -446,95 +653,204 @@
     <!-- Main Content -->
     <main class="container">
 
-        <!-- Highlight Banner: Replay & Multiplayer -->
+        <!-- Showcase Screenshot Gallery -->
+        <section id="showcase" class="gallery-wrap">
+            <div class="section-header">
+                <span class="section-badge">Game Gallery</span>
+                <h2 class="section-title">Actual Gameplay in Action</h2>
+                <p class="section-desc">Swipe through actual in-game screenshots captured directly on iOS devices.</p>
+            </div>
+
+            <div class="gallery-scroll">
+                <!-- Screenshot 1 -->
+                <div class="gallery-item">
+                    <img src="assets/01_3D_Physics_Gameplay.png" alt="3D Physics Gameplay">
+                    <div class="gallery-caption">
+                        <h4>3D Physics Gameplay</h4>
+                        <p>Authentic behind-the-cue camera, competition table, balls, and match HUD.</p>
+                    </div>
+                </div>
+
+                <!-- Screenshot 2 -->
+                <div class="gallery-item">
+                    <img src="assets/02_Shot_Trajectory_Aim.png" alt="Shot Trajectory & Ghost Ball Aim">
+                    <div class="gallery-caption">
+                        <h4>Trajectory & Ghost Ball</h4>
+                        <p>Top-down tactical view with cushion reflections, ghost ball, and stroke power.</p>
+                    </div>
+                </div>
+
+                <!-- Screenshot 3 -->
+                <div class="gallery-item">
+                    <img src="assets/03_Training_Academy_Spin.png" alt="Training Academy & Spin">
+                    <div class="gallery-caption">
+                        <h4>Training & Spin Control</h4>
+                        <p>Interactive Cue Spin Pad for Follow, Draw, and Side English with precision drills.</p>
+                    </div>
+                </div>
+
+                <!-- Screenshot 4 -->
+                <div class="gallery-item">
+                    <img src="assets/04_Multiplayer_Lobby.png" alt="Multiplayer Lobby">
+                    <div class="gallery-caption">
+                        <h4>Global Multiplayer Lobby</h4>
+                        <p>Apple Game Center, local offline Bluetooth/Wi-Fi duels, and tournament modes.</p>
+                    </div>
+                </div>
+
+                <!-- Screenshot 5 -->
+                <div class="gallery-item">
+                    <img src="assets/05_Disciplines_World_Legends.png" alt="Disciplines & World Legends">
+                    <div class="gallery-caption">
+                        <h4>World Legends & Disciplines</h4>
+                        <p>3-Cushion, 1-Cushion, Libre, and challenge matches against Top 10 World Legends.</p>
+                    </div>
+                </div>
+
+                <!-- Screenshot 6 -->
+                <div class="gallery-item">
+                    <img src="assets/06_Tournament_Arena.png" alt="Tournament Arena Brackets">
+                    <div class="gallery-caption">
+                        <h4>Tournament Arena</h4>
+                        <p>Knockout bracket championships for 4 to 8 players with parallel table play.</p>
+                    </div>
+                </div>
+
+                <!-- Screenshot 7 -->
+                <div class="gallery-item">
+                    <img src="assets/07_Table_Customization.png" alt="Table & Settings Customization">
+                    <div class="gallery-caption">
+                        <h4>Table & Cue Customization</h4>
+                        <p>9ft tournament tables, 4 premium Simonis cloth colors, and maple wood rails.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Highlight Banner: Multiplayer & Reconnect Grace -->
         <section class="highlight-banner">
             <div class="highlight-content">
-                <span class="section-badge">Party & Multiplayer Fun</span>
-                <h3>Host Tournaments & Play With Friends Anywhere</h3>
-                <p>Enjoy thrilling carom matches with your buddies! Create knockout brackets for 4 to 8 players directly on your iPhone or iPad. Connect instantly with friends sitting right next to you using local Bluetooth or Wi-Fi—no internet or mobile data required.</p>
+                <span class="section-badge">Party & Multiplayer Arena</span>
+                <h3>Host Tournaments & Challenge Friends Anywhere</h3>
+                <p>Play thrilling carom matches with your buddies! Create instant knockout tournament brackets for 4 to 8 players directly on your iPhone or iPad. Connect seamlessly over local Bluetooth or Wi-Fi—no cellular data or internet connection required.</p>
                 <ul class="feature-bullets">
-                    <li><b>4 to 8-Player Knockout Tournaments</b>: Run brackets on parallel tables with automatic scoring and instant finals.</li>
-                    <li><b>Nearby Friends Play (Wi-Fi & Bluetooth)</b>: Zero setup needed. Play anywhere—during breaks, trips, or game nights.</li>
-                    <li><b>Pass & Play on One Device</b>: Hand the phone over and take turns shooting with a friend.</li>
-                    <li><b>Global 1v1 Online Matches</b>: Jump into quick matchmaking against players worldwide via Apple Game Center.</li>
+                    <li><b>4 to 8-Player Knockout Tournaments</b>: Run brackets on parallel tables with live scoring and automatic finals.</li>
+                    <li><b>Offline Nearby Play (Bluetooth & Wi-Fi)</b>: Instant peer-to-peer connection for flights, breaks, and club meetups.</li>
+                    <li><b>Global 1v1 Online Matchmaking</b>: Quick Game Center pairing with network reconnect protection to preserve table state.</li>
+                    <li><b>Pass & Play on One Device</b>: Hand over your phone or iPad and take turns shooting with a friend.</li>
                 </ul>
             </div>
             <div class="highlight-badge-card">
                 <div class="stat-val">8</div>
-                <div class="stat-label">Max Tournament Players</div>
+                <div class="stat-label">Max Bracket Players</div>
                 <div style="height: 18px;"></div>
                 <div class="stat-val" style="color: var(--emerald);">0 MB</div>
                 <div class="stat-label">Data Needed (Offline P2P)</div>
                 <div style="height: 18px;"></div>
                 <div class="stat-val" style="color: var(--cyan);">3D</div>
-                <div class="stat-label">Immersive View</div>
+                <div class="stat-label">Behind-Cue Perspective</div>
             </div>
         </section>
 
-        <!-- Core Features Grid -->
-        <section>
+        <!-- Core Disciplines -->
+        <section id="disciplines">
             <div class="section-header">
-                <span class="section-badge">Game Features</span>
-                <h2 class="section-title">Classic Carom Made Simple</h2>
-                <p class="section-desc">Smooth controls, intuitive ball spin, and exciting game modes designed for everyone to enjoy.</p>
+                <span class="section-badge">Tournament Disciplines</span>
+                <h2 class="section-title">3 Classic Carom Modes</h2>
+                <p class="section-desc">Master the world's most prestigious pocketless billiard disciplines with genuine tournament rule sets.</p>
             </div>
 
             <div class="grid-3">
-                <!-- Card 1 -->
+                <!-- Mode 1 -->
                 <div class="card">
-                    <span class="card-tag">Game Mode</span>
+                    <span class="card-tag">Discipline 1</span>
                     <div class="card-icon">🔴</div>
                     <h3 class="card-title">Three-Cushion (3-Cushion)</h3>
-                    <p class="card-desc">The most popular carom challenge! Score points by bouncing the ball off at least 3 cushions before hitting the final ball.</p>
+                    <p class="card-desc">The ultimate strategic test of bank angles and diamond systems. Score points by bouncing the cue ball off at least 3 cushions before hitting the final ball.</p>
                 </div>
 
-                <!-- Card 2 -->
+                <!-- Mode 2 -->
                 <div class="card">
-                    <span class="card-tag">Game Mode</span>
+                    <span class="card-tag">Discipline 2</span>
                     <div class="card-icon">🟡</div>
                     <h3 class="card-title">One-Cushion (1-Cushion)</h3>
-                    <p class="card-desc">Fast and fun tactical play. Strike at least one cushion to complete your shot. Great for quick games with friends.</p>
+                    <p class="card-desc">Fast, dynamic, and tactically rich. Strike at least one cushion prior to completing the carom. Ideal for fine speed control and bank shot precision.</p>
                 </div>
 
-                <!-- Card 3 -->
+                <!-- Mode 3 -->
                 <div class="card">
-                    <span class="card-tag">Game Mode</span>
+                    <span class="card-tag">Discipline 3</span>
                     <div class="card-icon">⚪️</div>
-                    <h3 class="card-title">Free-Style Carom (Libre)</h3>
-                    <p class="card-desc">The classic billiard format. Score continuous points by hitting both object balls freely. Perfect for high scoring runs.</p>
+                    <h3 class="card-title">Straight Rail (Libre)</h3>
+                    <p class="card-desc">The purest classic billiard format. Score continuous caroms by striking both object balls freely. Perfect for building massive high runs and master gathers.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gameplay Features Grid -->
+        <section id="features">
+            <div class="section-header">
+                <span class="section-badge">Engineering & Polish</span>
+                <h2 class="section-title">Built for Serious Carom Enthusiasts</h2>
+                <p class="section-desc">From genuine Simonis cloth friction to Free Ball Setup, every element is tuned for tournament-grade realism.</p>
+            </div>
+
+            <div class="grid-3">
+                <!-- Feature 1 -->
+                <div class="card">
+                    <span class="card-tag">Innovation</span>
+                    <div class="card-icon">🎯</div>
+                    <h3 class="card-title">Free Ball Setup (Shot Lab)</h3>
+                    <p class="card-desc">Freely drag and drop all 3 balls anywhere on the table to inspect diamond angles, solve tricky leaves, or rehearse custom trick shots at your own pace.</p>
                 </div>
 
-                <!-- Card 4 -->
+                <!-- Feature 2 -->
                 <div class="card">
-                    <span class="card-tag">Controls</span>
+                    <span class="card-tag">Spin Mechanics</span>
                     <div class="card-icon">🌀</div>
-                    <h3 class="card-title">Simple Ball Spin & Power</h3>
-                    <p class="card-desc">Just tap on the cue ball to add top spin, backspin (draw), or side English. Drag the slider to set shot power effortlessly.</p>
+                    <h3 class="card-title">Interactive Cue Spin Pad</h3>
+                    <p class="card-desc">Touch the cue ball circle to apply Follow (topspin), Draw (backspin), Left/Right English, Tickie, and Revers. Full physical ball squirt and throw dynamics included.</p>
                 </div>
 
-                <!-- Card 5 -->
+                <!-- Feature 3 -->
                 <div class="card">
-                    <span class="card-tag">Camera Views</span>
+                    <span class="card-tag">Camera Freedom</span>
                     <div class="card-icon">🎥</div>
-                    <h3 class="card-title">2D Top-Down & Immersive 3D</h3>
-                    <p class="card-desc">Switch seamlessly between an overview top-down angle and a realistic 3D behind-the-cue view with smooth camera zoom.</p>
+                    <h3 class="card-title">Dual 3D & 2D Perspectives</h3>
+                    <p class="card-desc">Switch seamlessly with a single tap between an immersive behind-the-cue 3D view and a full-table top-down 2D tactical view with adaptive aiming zoom.</p>
                 </div>
 
-                <!-- Card 6 -->
+                <!-- Feature 4 -->
                 <div class="card">
-                    <span class="card-tag">Solo & Practice</span>
+                    <span class="card-tag">Training Academy</span>
+                    <div class="card-icon">🎓</div>
+                    <h3 class="card-title">Guided Drills & Ghost Ball</h3>
+                    <p class="card-desc">Step-by-step academy drills covering full ball direct hits, fractional cuts (1/4, 1/2, 3/4), cushion bank rebounds, and live cushion collision counters.</p>
+                </div>
+
+                <!-- Feature 5 -->
+                <div class="card">
+                    <span class="card-tag">Solo Challenge</span>
                     <div class="card-icon">🤖</div>
-                    <h3 class="card-title">Smart AI & Fun World Tour</h3>
-                    <p class="card-desc">Play solo anytime against Easy, Medium, or Hard AI opponents, or challenge top champions in the World Legends Tour.</p>
+                    <h3 class="card-title">World Legends Tour & Smart AI</h3>
+                    <p class="card-desc">Challenge 10 world-class champion rivals or hone your skills against 3 adaptive AI tiers (Easy, Medium, and Master) with realistic shot calculation.</p>
+                </div>
+
+                <!-- Feature 6 -->
+                <div class="card">
+                    <span class="card-tag">Post-Game Analytics</span>
+                    <div class="card-icon">🔄</div>
+                    <h3 class="card-title">Slow-Mo Replay & Match Review</h3>
+                    <p class="card-desc">Replay your best shots in 0.75x, 1.0x, and 1.5x slow motion. Enter post-game Match Review to inspect every 3D ball trajectory trace and analyze strategy.</p>
                 </div>
             </div>
         </section>
 
         <!-- Technical & Store Specifications -->
-        <section class="specs-box">
+        <section id="specifications" class="specs-box">
             <div class="section-header" style="margin-bottom: 30px;">
-                <span class="section-badge">App Information</span>
-                <h2 class="section-title" style="font-size: 26px;">Product Specifications</h2>
+                <span class="section-badge">Product Details</span>
+                <h2 class="section-title" style="font-size: 26px;">App Store Technical Specifications</h2>
             </div>
             <div class="specs-grid">
                 <div class="spec-item">
@@ -542,7 +858,11 @@
                     <div class="spec-value">NGOC THANG TRUONG</div>
                 </div>
                 <div class="spec-item">
-                    <div class="spec-label">Primary Category</div>
+                    <div class="spec-label">Bundle Identifier</div>
+                    <div class="spec-value">com.thangtn.carombilliards</div>
+                </div>
+                <div class="spec-item">
+                    <div class="spec-label">Primary Categories</div>
                     <div class="spec-value">Games / Sports / Simulation</div>
                 </div>
                 <div class="spec-item">
@@ -551,7 +871,11 @@
                 </div>
                 <div class="spec-item">
                     <div class="spec-label">Supported Languages</div>
-                    <div class="spec-value">English, Vietnamese</div>
+                    <div class="spec-value">English, Vietnamese, Spanish, French, German, Danish, Korean, Japanese, Turkish</div>
+                </div>
+                <div class="spec-item">
+                    <div class="spec-label">Multiplayer Modes</div>
+                    <div class="spec-value">Game Center, Bluetooth, Local Wi-Fi, Pass & Play</div>
                 </div>
                 <div class="spec-item">
                     <div class="spec-label">Age Rating</div>
@@ -559,7 +883,7 @@
                 </div>
                 <div class="spec-item">
                     <div class="spec-label">Data Privacy</div>
-                    <div class="spec-value">Data Not Collected (100% Offline Capable)</div>
+                    <div class="spec-value">Data Not Collected (100% On-Device Physics)</div>
                 </div>
             </div>
         </section>
@@ -575,7 +899,7 @@
             <a href="../index.html">Studio Portal</a>
         </div>
         <p>&copy; 2026 Carom GO. Created by NGOC THANG TRUONG. All rights reserved.</p>
-        <p style="margin-top: 6px; font-size: 12px; color: #475569;">Apple, iPhone, iPad, and Game Center are trademarks of Apple Inc., registered in the U.S. and other countries.</p>
+        <p style="margin-top: 8px; font-size: 12px; color: #475569;">Apple, iPhone, iPad, and Game Center are trademarks of Apple Inc., registered in the U.S. and other countries.</p>
     </footer>
 </body>
 </html>
