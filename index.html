@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NGOC THANG TRUONG - Mobile Games Studio</title>
+    <title>THANG TRUONG NGOC - Mobile Games & Software Developer</title>
+    <meta name="description" content="Official Apple Developer portfolio of THANG TRUONG NGOC. Crafting high-fidelity simulation sports, mathematical logic puzzles, and privacy-first macOS utilities for iOS, iPadOS, and macOS.">
+    <link rel="icon" type="image/png" href="river-crossing/assets/icon.png">
     <style>
         :root {
             --bg-color: #0a0e14;
@@ -11,11 +13,13 @@
             --accent: #2ecc71;
             --accent-hover: #27ae60;
             --accent-glow: rgba(46, 204, 113, 0.25);
+            --cyan: #38bdf8;
+            --cyan-glow: rgba(56, 189, 248, 0.28);
             --gold: #f1c40f;
             --text-primary: #ffffff;
             --text-secondary: #94a3b8;
             --border: #243142;
-            --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            --font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
         }
 
         * {
@@ -32,6 +36,7 @@
             min-height: 100vh;
             display: flex;
             flex-direction: column;
+            -webkit-font-smoothing: antialiased;
         }
 
         .hero {
@@ -44,24 +49,24 @@
 
         .badge {
             display: inline-block;
-            background: var(--accent-glow);
-            color: var(--accent);
+            background: var(--cyan-glow);
+            color: var(--cyan);
             font-size: 13px;
             font-weight: 700;
-            padding: 6px 16px;
+            padding: 6px 18px;
             border-radius: 30px;
             margin-bottom: 18px;
             text-transform: uppercase;
             letter-spacing: 1px;
-            border: 1px solid rgba(46, 204, 113, 0.35);
+            border: 1px solid rgba(56, 189, 248, 0.35);
         }
 
         h1 {
-            font-size: 42px;
-            font-weight: 800;
+            font-size: 44px;
+            font-weight: 900;
             letter-spacing: -1px;
             margin-bottom: 12px;
-            background: linear-gradient(135deg, #ffffff 40%, var(--gold) 100%);
+            background: linear-gradient(135deg, #ffffff 40%, #bae6fd 75%, var(--gold) 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
@@ -69,12 +74,20 @@
         .tagline {
             font-size: 18px;
             color: var(--text-secondary);
-            max-width: 650px;
-            margin: 0 auto;
+            max-width: 720px;
+            margin: 0 auto 24px;
+            line-height: 1.6;
+        }
+
+        .hero-cta {
+            display: flex;
+            justify-content: center;
+            gap: 14px;
+            flex-wrap: wrap;
         }
 
         .container {
-            max-width: 1000px;
+            max-width: 1060px;
             margin: 0 auto;
             padding: 50px 20px;
             flex: 1;
@@ -94,7 +107,7 @@
             display: inline-block;
             width: 4px;
             height: 24px;
-            background: var(--accent);
+            background: var(--cyan);
             border-radius: 2px;
         }
 
@@ -108,18 +121,18 @@
         .game-card {
             background: var(--card-bg);
             border: 1px solid var(--border);
-            border-radius: 16px;
+            border-radius: 18px;
             padding: 30px;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
+            transition: transform 0.25s, border-color 0.25s, box-shadow 0.25s;
         }
 
         .game-card:hover {
             transform: translateY(-4px);
-            border-color: var(--accent);
-            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+            border-color: var(--cyan);
+            box-shadow: 0 16px 36px rgba(0, 0, 0, 0.45);
         }
 
         .game-header {
@@ -130,15 +143,16 @@
         }
 
         .game-icon {
-            font-size: 40px;
+            font-size: 38px;
             width: 64px;
             height: 64px;
-            background: rgba(46, 204, 113, 0.12);
-            border: 1px solid rgba(46, 204, 113, 0.25);
+            background: rgba(56, 189, 248, 0.12);
+            border: 1px solid rgba(56, 189, 248, 0.3);
             border-radius: 14px;
             display: flex;
             align-items: center;
             justify-content: center;
+            flex-shrink: 0;
         }
 
         .game-title {
@@ -149,7 +163,7 @@
 
         .game-genre {
             font-size: 13px;
-            color: var(--accent);
+            color: var(--cyan);
             font-weight: 600;
         }
 
@@ -170,22 +184,27 @@
         }
 
         .btn {
-            display: inline-block;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
             font-size: 13px;
-            font-weight: 600;
-            padding: 8px 16px;
-            border-radius: 8px;
+            font-weight: 700;
+            padding: 9px 18px;
+            border-radius: 10px;
             text-decoration: none;
-            transition: all 0.2s;
+            transition: all 0.2s ease;
         }
 
         .btn-primary {
-            background: var(--accent);
-            color: #0a0e14;
+            background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%);
+            color: #ffffff;
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            box-shadow: 0 4px 18px var(--cyan-glow);
         }
 
         .btn-primary:hover {
-            background: var(--accent-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 24px rgba(56, 189, 248, 0.45);
         }
 
         .btn-outline {
@@ -195,33 +214,70 @@
         }
 
         .btn-outline:hover {
-            background: rgba(255, 255, 255, 0.1);
-            border-color: #64748b;
+            background: rgba(255, 255, 255, 0.12);
+            border-color: var(--cyan);
         }
 
-        .coming-soon {
-            opacity: 0.6;
-            border-style: dashed;
+        .btn-store {
+            background: rgba(255, 255, 255, 0.08);
+            color: #ffffff;
+            border: 1px solid rgba(255, 255, 255, 0.2);
         }
 
-        .coming-soon:hover {
-            transform: none;
-            border-color: var(--border);
-            box-shadow: none;
+        .btn-store:hover {
+            background: rgba(255, 255, 255, 0.16);
+            border-color: #ffffff;
+        }
+
+        /* Developer Bio Box */
+        .dev-box {
+            background: linear-gradient(135deg, #0e1724 0%, #142132 100%);
+            border: 1px solid rgba(56, 189, 248, 0.3);
+            border-radius: 18px;
+            padding: 32px;
+            margin-bottom: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 24px;
+            flex-wrap: wrap;
+        }
+
+        .dev-info h3 {
+            font-size: 22px;
+            font-weight: 800;
+            color: #ffffff;
+            margin-bottom: 8px;
+        }
+
+        .dev-info p {
+            color: var(--text-secondary);
+            font-size: 14.5px;
+            max-width: 680px;
+            line-height: 1.6;
         }
 
         footer {
             border-top: 1px solid var(--border);
             background: #070a0e;
-            padding: 30px 20px;
+            padding: 40px 20px;
             text-align: center;
             color: var(--text-secondary);
             font-size: 14px;
         }
 
+        footer .footer-nav {
+            display: flex;
+            justify-content: center;
+            gap: 22px;
+            flex-wrap: wrap;
+            margin-bottom: 14px;
+        }
+
         footer a {
-            color: var(--accent);
+            color: var(--cyan);
             text-decoration: none;
+            font-weight: 600;
         }
 
         footer a:hover {
@@ -231,37 +287,38 @@
 </head>
 <body>
     <header class="hero">
-        <span class="badge">Independent Mobile Game Studio</span>
-        <h1>NGOC THANG TRUONG</h1>
-        <p class="tagline">Crafting high-fidelity sports, simulation, and algorithmic logic puzzle games for iOS and iPadOS.</p>
+        <span class="badge">Apple Developer Portfolio</span>
+        <h1>THANG TRUONG NGOC</h1>
+        <p class="tagline">Independent software & game developer crafting high-fidelity simulation sports, mathematical logic puzzles, and privacy-first macOS utilities for Apple platforms.</p>
+        <div class="hero-cta">
+            <a href="https://apps.apple.com/us/developer/thang-truong-ngoc/id6818040142" target="_blank" rel="noopener" class="btn btn-primary">
+                 Official Apple App Store Portfolio ↗
+            </a>
+            <a href="mailto:ngocthang@gmail.com" class="btn btn-outline">
+                ✉️ Contact Developer
+            </a>
+        </div>
     </header>
 
     <main class="container">
-        <h2 class="section-title">Published Titles</h2>
-        <div class="game-grid">
-            <!-- Game 1: Carom GO -->
-            <div class="game-card">
-                <div>
-                    <div class="game-header">
-                        <div class="game-icon">🎱</div>
-                        <div>
-                            <div class="game-title">Carom GO</div>
-                            <div class="game-genre">Authentic 3D Carom & Tournaments</div>
-                        </div>
-                    </div>
-                    <p class="game-desc">
-                        Experience authentic pocketless carom billiards with realistic 3D cushion physics and true Simonis cloth friction! Host 4 to 8-player knockout tournaments, test custom leaves with Free Ball Setup, challenge 10 World Legend Champions, and compete offline over Bluetooth/Wi-Fi or online via Apple Game Center. Features 3-Cushion, 1-Cushion, and Libre disciplines with 9 localized languages.
-                    </p>
-                </div>
-                <div class="game-links">
-                    <a href="carom/index.html" class="btn btn-primary">Overview</a>
-                    <a href="carom/privacy-policy.html" class="btn btn-outline">Privacy Policy</a>
-                    <a href="carom/support.html" class="btn btn-outline">Support</a>
-                    <a href="carom/terms.html" class="btn btn-outline">Terms</a>
-                </div>
+        <!-- Developer Profile Overview -->
+        <div class="dev-box">
+            <div class="dev-info">
+                <h3>About THANG TRUONG NGOC</h3>
+                <p>
+                    Developer of original digital experiences on iOS, iPadOS, and macOS. All applications are built with an uncompromising commitment to responsive physics, provable algorithms, zero third-party tracking, and clean offline performance.
+                </p>
             </div>
+            <div>
+                <a href="https://apps.apple.com/us/developer/thang-truong-ngoc/id6818040142" target="_blank" rel="noopener" class="btn btn-store">
+                     Developer ID: 6818040142 ↗
+                </a>
+            </div>
+        </div>
 
-            <!-- Game 2: River IQ -->
+        <h2 class="section-title">Published Titles & Applications</h2>
+        <div class="game-grid">
+            <!-- Game 1: River IQ -->
             <div class="game-card">
                 <div>
                     <div class="game-header">
@@ -276,37 +333,65 @@
                     </p>
                 </div>
                 <div class="game-links">
-                    <a href="river-crossing/index.html" class="btn btn-primary" style="background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%);">Overview</a>
-                    <a href="river-crossing/privacy-policy.html" class="btn btn-outline">Privacy Policy</a>
+                    <a href="river-crossing/index.html" class="btn btn-primary">Overview</a>
+                    <a href="https://apps.apple.com/us/developer/thang-truong-ngoc/id6818040142" target="_blank" rel="noopener" class="btn btn-store"> App Store ↗</a>
+                    <a href="river-crossing/privacy-policy.html" class="btn btn-outline">Privacy</a>
                     <a href="river-crossing/support.html" class="btn btn-outline">Support</a>
-                    <a href="river-crossing/terms.html" class="btn btn-outline">Terms</a>
                 </div>
             </div>
 
-            <!-- Future Game Slot -->
-            <div class="game-card coming-soon">
+            <!-- Game 2: Carom GO -->
+            <div class="game-card">
                 <div>
                     <div class="game-header">
-                        <div class="game-icon" style="background: rgba(255, 255, 255, 0.05); border-color: var(--border);">🚀</div>
+                        <div class="game-icon" style="background: rgba(46, 204, 113, 0.12); border-color: rgba(46, 204, 113, 0.25);">🎱</div>
                         <div>
-                            <div class="game-title">More Games Coming Soon</div>
-                            <div class="game-genre">In Active Development</div>
+                            <div class="game-title">Carom GO</div>
+                            <div class="game-genre" style="color: #2ecc71;">Authentic 3D Carom & Tournaments</div>
                         </div>
                     </div>
                     <p class="game-desc">
-                        New mobile gaming titles are currently in production. Stay tuned for future releases across sports, board games, and strategy simulations.
+                        Experience authentic pocketless carom billiards with realistic 3D cushion physics and true Simonis cloth friction! Host 4 to 8-player knockout tournaments, test custom leaves with Free Ball Setup, challenge 10 World Legend Champions, and compete offline over Bluetooth/Wi-Fi or online via Apple Game Center.
                     </p>
                 </div>
                 <div class="game-links">
-                    <span class="btn btn-outline" style="cursor: default;">Coming Soon</span>
+                    <a href="carom/index.html" class="btn btn-primary" style="background: linear-gradient(135deg, #10b981 0%, #059669 100%); box-shadow: 0 4px 18px rgba(16,185,129,0.3);">Overview</a>
+                    <a href="https://apps.apple.com/us/developer/thang-truong-ngoc/id6818040142" target="_blank" rel="noopener" class="btn btn-store"> App Store ↗</a>
+                    <a href="carom/privacy-policy.html" class="btn btn-outline">Privacy</a>
+                    <a href="carom/support.html" class="btn btn-outline">Support</a>
+                </div>
+            </div>
+
+            <!-- App 3: MiniStats -->
+            <div class="game-card">
+                <div>
+                    <div class="game-header">
+                        <div class="game-icon" style="background: rgba(245, 158, 11, 0.12); border-color: rgba(245, 158, 11, 0.35);">💻</div>
+                        <div>
+                            <div class="game-title">MiniStats: System Monitor</div>
+                            <div class="game-genre" style="color: #f59e0b;">macOS Menu Bar Utility</div>
+                        </div>
+                    </div>
+                    <p class="game-desc">
+                        Lightweight, native menu bar performance monitor for Apple Silicon Macs. Displays real-time CPU usage, unified memory pressure, disk I/O, battery health, and network bandwidth graphs with zero background battery drain.
+                    </p>
+                </div>
+                <div class="game-links">
+                    <a href="https://apps.apple.com/us/app/ministats-system-monitor/id6820877282?mt=12" target="_blank" rel="noopener" class="btn btn-primary" style="background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%); box-shadow: 0 4px 18px rgba(245,158,11,0.3);"> Mac App Store ↗</a>
+                    <a href="https://apps.apple.com/us/developer/thang-truong-ngoc/id6818040142" target="_blank" rel="noopener" class="btn btn-outline">Developer Page</a>
                 </div>
             </div>
         </div>
     </main>
 
     <footer>
-        <p>&copy; 2026 NGOC THANG TRUONG. All rights reserved.</p>
-        <p style="margin-top: 6px; font-size: 13px;">Contact: <a href="mailto:ngocthang@gmail.com">ngocthang@gmail.com</a></p>
+        <div class="footer-nav">
+            <a href="https://apps.apple.com/us/developer/thang-truong-ngoc/id6818040142" target="_blank" rel="noopener"> Apple Developer Portfolio (ID: 6818040142) ↗</a>
+            <a href="river-crossing/index.html">River IQ</a>
+            <a href="carom/index.html">Carom GO</a>
+            <a href="mailto:ngocthang@gmail.com">Contact Support</a>
+        </div>
+        <p>&copy; 2026 THANG TRUONG NGOC. All rights reserved.</p>
     </footer>
 </body>
 </html>

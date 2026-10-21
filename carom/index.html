@@ -846,6 +846,75 @@
             color: #ffffff;
         }
 
+        /* Developer Profile Box */
+        .developer-box {
+            background: linear-gradient(135deg, #0e1724 0%, #152233 100%);
+            border: 1px solid var(--card-border);
+            border-radius: 20px;
+            padding: 36px 32px;
+            margin-bottom: 60px;
+            box-shadow: 0 16px 36px rgba(0, 0, 0, 0.35);
+        }
+
+        .developer-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 32px;
+            flex-wrap: wrap;
+        }
+
+        .developer-text {
+            flex: 1;
+            min-width: 280px;
+        }
+
+        .developer-name {
+            font-size: 26px;
+            font-weight: 800;
+            color: #ffffff;
+            margin-bottom: 10px;
+            letter-spacing: -0.5px;
+        }
+
+        .developer-desc {
+            color: var(--text-secondary);
+            font-size: 15px;
+            line-height: 1.65;
+            margin-bottom: 20px;
+            max-width: 680px;
+        }
+
+        .developer-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .developer-id-card {
+            text-align: center;
+            background: rgba(0, 0, 0, 0.38);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 18px;
+            padding: 26px 24px;
+            min-width: 220px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+        }
+
+        @media (max-width: 768px) {
+            .developer-content {
+                flex-direction: column;
+                text-align: center;
+                gap: 22px;
+            }
+            .developer-actions {
+                justify-content: center;
+            }
+            .developer-id-card {
+                width: 100%;
+            }
+        }
+
         /* Footer */
         footer {
             border-top: 1px solid var(--card-border);
@@ -914,10 +983,11 @@
                 <li><a href="#disciplines">Disciplines</a></li>
                 <li><a href="#features">Features</a></li>
                 <li><a href="#specifications">Specs</a></li>
+                <li><a href="#developer">Developer</a></li>
                 <li><a href="support.html">Support</a></li>
                 <li><a href="privacy-policy.html">Privacy</a></li>
             </ul>
-            <a href="https://apps.apple.com/app/id6738927894" class="nav-cta"> App Store</a>
+            <a href="https://apps.apple.com/us/developer/thang-truong-ngoc/id6818040142" target="_blank" rel="noopener" class="nav-cta"> App Store</a>
         </div>
     </nav>
 
@@ -945,7 +1015,7 @@
         </div>
 
         <div class="btn-group">
-            <a href="https://apps.apple.com/app/id6738927894" class="btn btn-primary"> Download on the App Store</a>
+            <a href="https://apps.apple.com/us/developer/thang-truong-ngoc/id6818040142" target="_blank" rel="noopener" class="btn btn-primary"> Download on the App Store</a>
             <a href="support.html" class="btn btn-secondary">💬 Player Support</a>
             <a href="privacy-policy.html" class="btn btn-secondary">🔒 Privacy Policy</a>
         </div>
@@ -1201,7 +1271,11 @@
             <div class="specs-grid">
                 <div class="spec-item">
                     <div class="spec-label">Developer</div>
-                    <div class="spec-value">NGOC THANG TRUONG</div>
+                    <div class="spec-value">
+                        <a href="https://apps.apple.com/us/developer/thang-truong-ngoc/id6818040142" target="_blank" rel="noopener" style="color: var(--emerald); text-decoration: none; font-weight: 700;">
+                            THANG TRUONG NGOC ↗
+                        </a>
+                    </div>
                 </div>
                 <div class="spec-item">
                     <div class="spec-label">Bundle Identifier</div>
@@ -1234,6 +1308,28 @@
             </div>
         </section>
 
+        <!-- Developer Profile & Portfolio Banner -->
+        <section id="developer" class="developer-box">
+            <div class="developer-content">
+                <div class="developer-badge"></div>
+                <div class="developer-text">
+                    <span class="section-badge" style="margin-bottom: 6px;">Developer Portfolio</span>
+                    <h3 class="developer-name">THANG TRUONG NGOC</h3>
+                    <p class="developer-desc">
+                        Official Apple Developer account publishing authentic sports simulations, algorithmic logic puzzles, and utility apps for iOS and iPadOS. Browse the full collection of released apps and upcoming projects directly on the Apple App Store.
+                    </p>
+                    <div class="developer-actions">
+                        <a href="https://apps.apple.com/us/developer/thang-truong-ngoc/id6818040142" target="_blank" rel="noopener" class="btn btn-primary" style="padding: 10px 22px; font-size: 14px;">
+                             View Developer Page on App Store
+                        </a>
+                        <a href="../index.html" class="btn btn-secondary" style="padding: 10px 22px; font-size: 14px;">
+                            🕹️ Studio Games Portal
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
     </main>
 
     <!-- Lightbox Modal -->
@@ -1254,12 +1350,13 @@
     <!-- Footer -->
     <footer>
         <div class="footer-links">
+            <a href="https://apps.apple.com/us/developer/thang-truong-ngoc/id6818040142" target="_blank" rel="noopener">Apple Developer Profile</a>
             <a href="privacy-policy.html">Privacy Policy</a>
             <a href="terms.html">Terms of Service</a>
             <a href="support.html">Customer Support</a>
             <a href="../index.html">Studio Portal</a>
         </div>
-        <p>&copy; 2026 Carom GO. Created by NGOC THANG TRUONG. All rights reserved.</p>
+        <p>&copy; 2026 Carom GO. Developed by <a href="https://apps.apple.com/us/developer/thang-truong-ngoc/id6818040142" target="_blank" rel="noopener" style="color: var(--emerald); font-weight: 700; text-decoration: none;">THANG TRUONG NGOC</a>. All rights reserved.</p>
         <p style="margin-top: 8px; font-size: 12px; color: #475569;">Apple, iPhone, iPad, and Game Center are trademarks of Apple Inc., registered in the U.S. and other countries.</p>
     </footer>
 
